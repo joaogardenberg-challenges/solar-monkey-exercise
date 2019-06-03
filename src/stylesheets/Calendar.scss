@@ -1,0 +1,95 @@
+@import './Constants';
+
+.calendar {
+  height:      100vh;
+  margin:      0 auto;
+  max-width:   $max-calendar-width;
+  min-height:  $min-calendar-height;
+  user-select: none;
+
+  ul {
+    height:   100%;
+    position: relative;
+    width:    100%;
+  }
+}
+
+.calendar-header {
+  text-align: center;
+
+  h1 {
+    line-height: $h1-size;
+  }
+
+  .calendar-date {
+    display:         flex;
+    flex-flow:       row nowrap;
+    justify-content: center;
+    margin-bottom:   24px;
+
+    h2 {
+      line-height: $h2-size;
+      margin:      0 16px;
+    }
+
+    button {
+      background-color: transparent;
+      border-radius:    5px;
+      padding:          0 8px;
+
+      &:hover {
+        background-color: $light-grey;
+      }
+
+      &:active {
+        background-color: $highlight;
+        color:            $light-blue;
+      }
+    }
+  }
+}
+
+.calendar-hour {
+  align-items: stretch;
+  box-sizing:  border-box;
+  display:     flex;
+  flex-flow:   row nowrap;
+  height:      calc(100% / 9);
+  padding:     0 16px;
+  width:       100%;
+
+  &:not(:last-of-type) {
+    box-shadow: 0 -2px 0 -1px $light-grey inset;
+  }
+
+  .hour-label {
+    align-self:   center;
+    flex:         0;
+    margin-right: 16px;
+  }
+
+  .hour-content {
+    flex: 1;
+  }
+}
+
+.calendar-now {
+  background-color: $highlight;
+  height:           1px;
+  left:             0;
+  position:         absolute;
+  top:              calc(100% / 9 * 7.5);
+  width:            100%;
+
+  &:after {
+    background-color: inherit;
+    border-radius:    5px;
+    color:            $light-blue;
+    content:          'Now';
+    line-height:      24px;
+    padding:          0 8px;
+    position:         absolute;
+    right:            0;
+    top:              -12px;
+  }
+}

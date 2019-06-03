@@ -1,0 +1,128 @@
+@import './Constants';
+
+.appointment {
+  align-items:     flex-start;
+  box-sizing:      border-box;
+  display:         flex;
+  flex-flow:       column nowrap;
+  height:          100%;
+  justify-content: center;
+  padding:         4px 8px;
+  position:        relative;
+
+  &.active {
+    border-color: $green;
+    border-style: solid;
+    border-width: 0 2px;
+  }
+
+  &.start {
+    border-top-left-radius:  10px;
+    border-top-right-radius: 10px;
+    border-top-width:        2px;
+
+    .drag-top {
+      cursor:   grab;
+      height:   10px;
+      left:     8px;
+      position: absolute;
+      top:      -7px;
+      width:    calc(100% - 18px);
+
+      &:hover {
+        border-bottom: 1px solid $black;
+        box-sizing:    border-box;
+
+        &:after {
+          border-width: 8px;
+          border-style: solid;
+          border-color: $black transparent transparent transparent;
+          content:      '';
+          height:       0;
+          left:         calc(50% - 4px);
+          position:     absolute;
+          top:          10px;
+          width:        0;
+        }
+      }
+    }
+
+    &.follows .drag-top:hover {
+      border-top: 1px solid $black;
+      box-sizing: border-box;
+
+      &:before {
+        border-width: 8px;
+        border-style: solid;
+        border-color: transparent transparent $black transparent;
+        content:      '';
+        height:       0;
+        left:         calc(50% - 4px);
+        position:     absolute;
+        top:          -17px;
+        width:        0;
+      }
+
+      &:after {
+        top: 9px;
+      }
+    }
+  }
+
+  &.end {
+    border-bottom-left-radius:  10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-width:        2px;
+
+    &:not(.followed) .drag-bottom {
+      cursor:   grab;
+      height:   10px;
+      left:     8px;
+      position: absolute;
+      bottom:   -7px;
+      width:    calc(100% + -18px);
+      z-index:  1;
+
+      &:hover {
+        border-top: 1px solid $black;
+        box-sizing: border-box;
+
+        &:before {
+          border-width: 8px;
+          border-style: solid;
+          border-color: transparent transparent $black transparent;
+          content:      '';
+          height:       0;
+          left:         calc(50% - 4px);
+          position:     absolute;
+          top:          -17px;
+          width:        0;
+        }
+      }
+    }
+  }
+
+  &.yellow {
+    border-color: $yellow;
+  }
+
+  &.red {
+    border-color: $red;
+  }
+
+  &:not(.start) > * {
+    font-size: 0;
+  }
+
+  .drag-top, .drag-bottom {
+    position: absolute;
+  }
+}
+
+.appointment-category {
+  margin: 4px 8px 0;
+}
+
+.appointment-description {
+  margin: 0 8px 4px;
+}

@@ -1,0 +1,85 @@
+@import-normalize;
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,700&display=swap');
+
+@import './Constants';
+
+body {
+  margin:      0;
+
+  &.modal-open {
+    overflow: hidden;
+  }
+
+  &,
+  button,
+  input,
+  select {
+    font-family: $text-font;
+    font-size:   $text-size;
+    font-weight: $text-weight;
+    color:       $black;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $header-font;
+}
+
+h1 {
+  font-size:   $h1-size;
+  font-weight: $h1-weight;
+  margin:      $h1-margin 0;
+}
+
+h2 {
+  font-size:   $h2-size;
+  font-weight: $h2-weight;
+  margin:      $h2-margin 0;
+}
+
+h3 {
+  font-size:   $h3-size;
+  font-weight: $h3-weight;
+  margin:      $h3-margin 0;
+}
+
+h4 {
+  font-size:   $h4-size;
+  font-weight: $h4-weight;
+  margin:      $h4-margin 0;
+}
+
+p {
+  margin: $text-margin 0;
+}
+
+ul {
+  list-style: none;
+  margin:     0;
+  padding:    0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input,
+select {
+  border: none;
+}
+
+.test {
+  &,
+  * {
+    background: rgba(0, 0, 0, .1);
+    box-shadow: 0 0 0 1px rgba(255, 0, 0, .3) inset;
+  }
+}

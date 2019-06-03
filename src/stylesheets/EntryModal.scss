@@ -1,0 +1,60 @@
+@import './Constants';
+
+.entry-modal {
+  display: none;
+  z-index: 10000;
+
+  &.open {
+    display: initial;
+  }
+
+  &,
+  .modal-overlay {
+    bottom:   0;
+    left:     0;
+    position: absolute;
+    right:    0;
+    top:      0;
+  }
+
+  .modal-overlay {
+    background-color: $black;
+    opacity:          .5;
+  }
+
+  .modal-body {
+    background-color: $black;
+    border-radius:    10px;
+    box-sizing:       border-box;
+    margin:           32px auto 0;
+    padding:          8px;
+    position:         relative;
+    width:            $max-calendar-width;
+
+    .form-row {
+      display:         flex;
+      flex-flow:       row nowrap;
+      justify-content: space-between;
+      padding:         16px;
+    }
+
+    input,
+    select {
+      width:   64px;
+      padding: 8px 16px;
+
+      &:last-child {
+        width: 100%;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      background-color: transparent;
+      color:            $light-blue;
+    }
+  }
+}
