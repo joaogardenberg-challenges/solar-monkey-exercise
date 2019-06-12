@@ -25,7 +25,7 @@ class CalendarNow extends React.Component {
   getPosition() {
     const now     = new Date();
     const hours   = now.getHours();
-    const minutes = now.getSeconds();
+    const minutes = now.getMinutes();
 
     return hours + minutes / 60;
   }
