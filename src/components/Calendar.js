@@ -3,8 +3,9 @@ import React from 'react';
 import                     '../stylesheets/Calendar.scss';
 import CalendarHeader from './CalendarHeader';
 import CalendarHour   from './CalendarHour';
+import CalendarNow    from './CalendarNow';
 
-const Calendar = () => {
+const Calendar = ({ openModal }) => {
   const appointments = [
     { className: 'active start red',                         category: 'Red',    description: 'Description' },
     { className: 'active end red',                           category: 'Red',    description: 'Description' },
@@ -45,8 +46,9 @@ const Calendar = () => {
         <CalendarHour label="21" />
         <CalendarHour label="22" />
         <CalendarHour label="23" />
-        <div className="calendar-now" />
+        <CalendarNow />
       </ul>
+      <button onClick={ openModal }>New</button>
     </div>
   );
 };

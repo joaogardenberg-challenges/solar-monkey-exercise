@@ -1,6 +1,8 @@
 @import './Constants';
 
 .calendar {
+  display:     flex;
+  flex-flow:   column nowrap;
   height:      100vh;
   margin:      0 auto;
   max-width:   $max-calendar-width;
@@ -8,7 +10,8 @@
   user-select: none;
 
   ul {
-    height:   100%;
+    height:   calc(100% - 100px);
+    overflow: auto;
     position: relative;
     width:    100%;
   }
@@ -78,7 +81,7 @@
   height:           1px;
   left:             0;
   position:         absolute;
-  top:              calc(100% / 9 * 7.5);
+  //top:              calc(100% / 9 * 7.5);
   width:            100%;
 
   &:after {
